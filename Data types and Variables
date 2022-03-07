@@ -3,14 +3,25 @@ There are two types of data type :
 1) Primitive data types
 2) Non-Primitive data types
 
-1) Primitive data types : a) byte - stores integer type value - upto 1 byte i.e 8 bit
-                          b) short - stores integer type value - upto 2 byte i.e 16 bit
-                          c) int - stores integer type value - upto 4 byte i.e 32 bit
-                          d) long - stores integer type value - upto 8 byte i.e 64 bit
-                          e) float - stores floating point i.e. decimal point values - upto 4 byte i.e. 32 bit
-                          f) double - stores floating point i.e. decimal point values - more precise - upto 8 byte i.e. 64 bit
-                          g) char - stores single character, symbol using single quotes (e.g. 'a','@',etc) - upto 2 byte i.e 16 bit
-                          h) boolean - stores true or false - 1 bit
+1) Primitive data types : - has fixed size -  a) byte - stores integer type value - upto 1 byte i.e 8 bit
+                                              b) short - stores integer type value - upto 2 byte i.e 16 bit
+                                              c) int - stores integer type value - upto 4 byte i.e 32 bit
+                                              d) long - stores integer type value - upto 8 byte i.e 64 bit
+                                              e) float - stores floating point i.e. decimal point values - upto 4 byte i.e. 32 bit
+                                              f) double - stores floating point i.e. decimal point values - more precise - upto 8 byte i.e. 64 bit
+                                              g) char - stores single character, symbol using single quotes (e.g. 'a','@',etc) - upto 2 byte i.e 16 bit
+                                              h) boolean - stores true or false - 1 bit
                           
-2) Non - Primitive data types :                           
+2) Non-Primitive data types : - has variable size- a) Arrays
+                                                   b) Strings
+                                                   c) Object
+                                                   d) Class
+                                                   e) Interface
+                                
+
+Variables : Containers for storing values.
+
+*************************************************************** CODE **********************************************************************************
+
+
                           
