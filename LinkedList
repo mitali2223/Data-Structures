@@ -1,0 +1,125 @@
+public class LL {
+        Node head;
+        Node tail;
+        public static class Node{
+                int data;
+                Node next;
+                Node previous;
+                Node(int data){
+                    this.data = data;
+                    this.next = null;
+                    this.previous = null;
+                }
+        }
+
+        public void insertAtFirst(int data){
+               Node new_node = new Node(data);
+             if(head == null){
+                     new_node.next = head;
+                     head = new_node;
+             }else{
+                     new_node.next = head;
+                     head = new_node;
+             }
+        }
+        public void insertAtLast(int data){
+                Node new_node = new Node(data);
+                Node temp = head;
+
+                if(head == null){
+                        head = new_node;
+                        return;
+                }
+
+                while(temp.next != null){
+                       temp = temp.next;
+
+                }
+                temp.next = new_node;
+        }
+        public  void insertAtPos(int data , int pos){
+                Node new_node = new Node(data);
+                int i = 1;
+                if(head == null){
+                        head = new_node;
+                        return;
+                }
+                Node nxt = null;
+               for(Node temp = head ;  ; temp = temp.next) {
+                       if (i == pos - 1) {
+                               Node previous = temp;
+                               nxt = previous.next;
+                               previous.next = new_node;
+                               i++;
+                               continue;
+                       }else if (i == pos) {
+                                temp.next = nxt;
+                               break;
+                       }
+                       if(temp == null){
+                            break;
+                       }
+                      i++;
+               }
+        }
+        public int linkedListLength(){
+               int len = 0;
+                Node temp = head;
+                while (temp != null){
+                        len++;
+                        temp = temp.next;
+                }
+                return len;
+        }
+        public void insertInMiddle(int data) {
+                int mid = linkedListLength()/2;
+                Node new_node = new Node(data);
+                Node temp = head ;
+                int index = 1;
+                while(temp.next != null){
+                       if(index == mid){
+                               Node nxt = temp.next;
+                               temp.next = new_node;
+                               new_node.next = nxt;
+                               index++;
+                               break;
+                       }
+                       temp = temp.next;
+                       index++;
+                }
+        }
+        public void removeLast(){
+                Node temp = head;
+                tail = temp;
+                while (temp.next != null){
+                    tail = temp;
+                    temp = temp.next;
+                }
+                tail.next = null;
+        }
+        public void traversal(){
+                Node temp = head;
+                if(temp == null){
+                        System.out.println("list is empty");
+                }else{
+                        while(temp != null){
+                                System.out.print(temp.data + " ");
+                                temp = temp.next;
+                        }
+                }
+        }
+
+        public static void main(String[] args) {
+                LL list = new LL();
+                int n = 4;
+                list.insertAtLast(43);
+                list.insertAtLast(51);
+                list.insertAtLast(34);
+                list.insertAtLast(98);
+                list.insertAtFirst(45);
+                list.insertInMiddle(67);
+                list.insertAtPos(81,5);
+                list.removeLast();
+                list.traversal();
+        }
+}
